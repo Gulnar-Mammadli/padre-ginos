@@ -1,5 +1,6 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
   server: {
@@ -14,5 +15,6 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react()],
+  //tanstack router must come before react
+  plugins: [TanStackRouterVite({ autoCodeSplitting: true }), react()],
 });
