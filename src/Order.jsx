@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Pizza } from "./Pizza";
 import Cart from "./Cart";
 import usePizzaTypes from "./hooks/usePizzaTypes";
+import CartContext from "./contexts/CartContext";
 
 const intl = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -11,7 +12,7 @@ const intl = new Intl.NumberFormat("en-US", {
 export default function Order() {
   const [pizzaType, setPizzaType] = useState("pepperoni");
   const [pizzaSize, setPizzaSize] = useState("M");
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useContext(CartContext);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
 
   const { pizzaTypes, loading } = usePizzaTypes();
