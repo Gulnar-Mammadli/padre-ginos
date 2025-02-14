@@ -32,5 +32,8 @@ export default [
       "react/prop-types": "off",
     },
   },
+  {
+    ignores: ["**/node_modules/", ".git/", "dist/*"],
+  },
   prettier,
 ];
