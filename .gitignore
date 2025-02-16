@@ -5,3 +5,4 @@ dist/
 .vscode/
 coverage/
 src/routeTree.gen.ts
+*.local
